@@ -1,0 +1,42 @@
+﻿@model IEnumerable<InstitutionProject.Models.Institute>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="card col-6 offset-3 mt-2">
+    <h3 class="card-header display-4 text-center bg-secondary-subtle mt-2 mb-2 ">Institute</h3>
+</div>
+
+<p>
+    <a asp-action="Create" asp-controller="Institutes" class="btn btn-outline-primary btn-sm fs-5"><i class="fa fa-plus-circle"></i>Create New</a>
+</p>
+<table class="table table-bordered table-striped table-sm">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.InstituteName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Established)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.InstituteName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Established)
+            </td>
+            <td>
+                    <a asp-action="Edit" asp-route-id="@item.InstituteId" class="btn btn-outline-info"><i class="fa fa-edit"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.InstituteId" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

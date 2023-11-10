@@ -1,0 +1,67 @@
+﻿@model InstitutionProject.Models.Campus
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row">
+    <div class="col">
+        <div class="card col-6 offset-3 mt-2">
+            <h2 class="card-header display-4 text-center bg-success-subtle mt-2">Add New Campus</h2>
+        </div>
+        <form asp-action="Create" asp-controller="Campuses">
+            <div class="row mb-2 mt-4">
+                <label asp-for="PrincipleName" class="col-form-label col-2 fw-bold fs-5"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="PrincipleName" class="form-control form-control-sm"/>
+                </div>
+                <div class="col-4">
+                    <span asp-validation-for="PrincipleName" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-2 mt-2">
+                <label asp-for="Address" class="col-form-label col-2 fw-bold fs-5"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="Address" class="form-control form-control-sm" />
+                </div>
+                <div class="col-4">
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-2 mt-2">
+                <label asp-for="Phone" class="col-form-label col-2 fw-bold fs-5"></label>
+                <div class="col-6">
+                    <input type="text" asp-for="Phone" class="form-control form-control-sm" />
+                </div>
+                <div class="col-4">
+                    <span asp-validation-for="Phone" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-2 mt-2">
+                <label asp-for="InstituteId" class="col-form-label col-2 fw-bold fs-5"></label>
+                <div class="col-6">
+                    <select class="form-select form-select-sm" asp-for="InstituteId" asp-items="@(new SelectList(ViewBag.institutes,"InstituteId","InstituteName"))">
+                        <option value="" selected>----Select----</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <span asp-validation-for="InstituteId" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-2 mt-2">
+               
+                <div class="col-10 offset-2">
+                    <input type="submit" value="Save" class="btn btn-primary mt-2"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-warning"><i class="fa fa-arrow-circle-left"></i>Back To List</a>
+</div>
+

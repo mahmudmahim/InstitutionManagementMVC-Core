@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <environment>
+        <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <script src="~/lib/jquery/jquery.js"></script>
+    </environment>
+    <style>
+        body{
+            font-family:Century;
+            font-size:.90em;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark text-light" style="background-color:#6E2CF4;">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand fw-bold fs-4">Institution ManageMent</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav fs-5">
+                    <li class="nav-item">
+                        @Html.ActionLink("Institutes","Index","Institutes",new{},new{@class="nav-link",style="color:white"})
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Campus","Index","Campuses",new{},new{@class="nav-link",style="color:white"})
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        @RenderBody()
+    </div>
+    <footer>
+        <p class="text-center">&copy;@DateTime.Now.Year--All Rights Reserved To its Owner</p>
+    </footer>
+    <environment>
+        <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+        <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    </environment>
+    @RenderSection("scripts",false)
+    @RenderSection("styles",false)
+</body>
+</html>

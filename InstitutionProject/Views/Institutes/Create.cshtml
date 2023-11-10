@@ -1,0 +1,37 @@
+﻿@model InstitutionProject.Models.Institute
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+
+<div class="row">
+    <div class="card col-6 offset-3 mt-2 mb-2">
+        <h2 class="card-header display-4 text-center bg-success-subtle mt-2">Add New Institute</h2>
+    </div>
+    <hr />
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="InstituteName" class="control-label fw-bold fs-5"></label>
+                <input asp-for="InstituteName" class="form-control" />
+                <span asp-validation-for="InstituteName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Established" class="control-label fw-bold fs-5"></label>
+                <input asp-for="Established" class="form-control" />
+                <span asp-validation-for="Established" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary mt-2" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" class="btn btn-outline-warning mt-2"><i class="fa fa-arrow-circle-left"></i>Back To List</a>
+</div>
+
